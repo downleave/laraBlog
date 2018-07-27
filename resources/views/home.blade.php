@@ -27,7 +27,8 @@
                     </a>
                 </div>
                 <div class="body">
-                    <p>{!! $article->html !!}</p>
+                    <!-- <p>{!! $article->html !!}</p> -->
+                    <p>{!! $article->body !!}</p>
                 </div>
             </li>
             @endforeach
