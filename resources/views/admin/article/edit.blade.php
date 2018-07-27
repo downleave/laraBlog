@@ -20,7 +20,10 @@
                         {{ method_field('PUT') }}
                         <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题" value="{{$articles->title}}">
                         <br>
-                        <textarea name="body" rows="10" class="form-control" required="required" placeholder="请输入内容">{{$articles->body}}</textarea>
+                        <!-- <textarea name="body" rows="10" class="form-control" required="required" placeholder="请输入内容">{{$articles->body}}</textarea> -->
+                        <div id="editormd">
+                            <textarea style="display:none;" name="body" placeholder="请输入内容" required="required">{{$articles->body}}</textarea>
+                        </div>
                         <br>
                         <button class="btn btn-lg btn-info">修改文章</button>
                     </form>
@@ -30,4 +33,23 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function() {
+        var editor = editormd("editormd", {
+            path : "{{ asset('editor/lib') }}/",// Autoload modules mode, codemirror, marked... dependents libs path
+            height  : 640,
+            width   : "100%",
+            syncScrolling : "single",
+            saveHTMLToTextarea : true//注意3：这个配置，方便post提交表单
+        });
+
+        /*
+        // or
+        var editor = editormd({
+            id   : "editormd",
+            path : "../lib/"
+        });
+        */
+    });
+</script>
 @endsection
