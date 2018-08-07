@@ -12,7 +12,7 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-    <div id="content" style="padding: 50px;">
+    <div id="content" class = "col-md-10 col-md-offset-1">
 
         <h4>
             <a href="/"><< 返回首页</a>
