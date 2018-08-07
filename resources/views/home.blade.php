@@ -17,23 +17,19 @@
         <div style="padding: 5px; font-size: 16px;">blog</div>
     </div>
     <hr>
-    <div id="content">
-        <ul>
-            @foreach ($articles as $article)
-            <li style="margin: 50px 0;">
-                <div class="title">
-                    <a href="{{ url('article/'.$article->id) }}">
-                        <h4>{{ $article->title }}</h4>
-                    </a>
-                </div>
-                <div class="body">
-                    <!-- <p>{!! $article->html !!}</p> -->
-                    <p>{!! $article->body !!}</p>
-                </div>
-            </li>
-            @endforeach
-        </ul>
+    <div id="content" class="col-md-10 col-md-offset-1">
+        @foreach ($articles as $article)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="{{ url('article/'.$article->id) }}">
+                    <h4>{{ $article->title }}</h4>
+                </a>
+            </div>
+            <div class="panel-body">
+                {!! $article->body !!}
+            </div>
+        </div>
+        @endforeach
     </div>
-
 </body>
 </html>
