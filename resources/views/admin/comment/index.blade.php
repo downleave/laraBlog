@@ -31,9 +31,11 @@
                                     {{$comment->email}}
                                 </td>
                                 <td>
+                                    @if ($comment->getArticle)
                                     <a href="{{ url('article/'.$comment->getArticle->id) }}">
                                         {{$comment->getArticle->title}}
                                     </a>
+                                    @endif
                                 </td>
                                 <td>
                                     <a href="{{ url('admin/comments/'.$comment->id.'/edit') }}" class="btn btn-success">编辑</a>
