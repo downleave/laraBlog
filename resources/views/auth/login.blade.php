@@ -43,7 +43,7 @@
                             <label for="captcha" class="col-md-4 control-label">Captcha</label>
 
                             <div class="col-md-6">
-                                <input id="captcha" type="captcha" class="form-control" name="captcha" required>
+                                <input id="captcha" type="captcha" class="form-control" name="captcha" autoComplete="off" required>
                                 <br/>
                                 {!! captcha_img() !!}
                                 @if ($errors->has('captcha'))
