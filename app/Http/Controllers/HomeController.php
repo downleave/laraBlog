@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->withArticles(\App\Article::all());
+        $articles = \App\Article::paginate(5);
+        return view('home')->with('articles',$articles);
     }
 }

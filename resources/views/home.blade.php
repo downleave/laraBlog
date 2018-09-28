@@ -31,5 +31,8 @@
         </div>
         @endforeach
     </div>
+    <div class="text-center">
+        {{ $articles->links() }}
+    </div>
 </body>
 </html>

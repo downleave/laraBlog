@@ -14,11 +14,12 @@ class ArticleSeeder extends Seeder
         //
         DB::table('articles')->delete();
 
-	    for ($i=0; $i < 10; $i++) {
+	    for ($i=0; $i < 20; $i++) {
 	        \App\Article::create([
 	            'title'   => '标题啦啦啦：'.$i,
-	            'body'    => '内容啦啦啦：'.$i,
+	            'body'    => '摘要啦啦啦：'.$i,
 	            'user_id' => 1,
+                'html'    => '内容啦啦啦：'.$i
 	        ]);
 	    }
     }
