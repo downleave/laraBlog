@@ -11,7 +11,7 @@ class ArticleController extends Controller
 	{
 	    if(Cache::has("article:{$id}")){
 	        $content = Cache::get("article:{$id}");
-        }else{
+	    }else{
             $content = Article::with('hasManyComments')->find($id);
             Cache::put("article:{$id}",$content,10);
         }
