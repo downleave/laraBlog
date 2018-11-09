@@ -45,7 +45,8 @@
                             <div class="col-md-6">
                                 <input id="captcha" type="captcha" class="form-control" name="captcha" autoComplete="off" required>
                                 <br/>
-                                {!! captcha_img() !!}
+                                {{--{!! captcha_img() !!}--}}
+                                <img class="thumbnail captcha" src="{{ captcha_src('default') }}" onclick="this.src='/captcha/default?'+Math.random()">
                                 @if ($errors->has('captcha'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('captcha') }}</strong>
